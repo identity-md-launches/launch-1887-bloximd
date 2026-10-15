@@ -6,6 +6,7 @@ import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {IERC20Errors} from "@openzeppelin/contracts/interfaces/draft-IERC6093.sol";
 import {BloxIMD} from "../src/BloxIMD.sol";
 
+/// forge-config: default.fuzz.runs = 1000
 contract BloxIMDTest is Test {
     uint256 internal constant SUPPLY = 1_000_000_000 ether;
     BloxIMD internal token;
@@ -209,7 +210,7 @@ contract BloxIMDTest is Test {
     }
 
     function testFuzz_transferConservesSupply(uint256 rawAmount, address recipient) public {
-        vm.assume(recipient != address(0) && recipient != address(this));
+        if (recipient == address(0) || recipient == address(this)) recipient = alice;
         uint256 amount = bound(rawAmount, 0, SUPPLY);
         assertTrue(token.transfer(recipient, amount));
         assertEq(token.balanceOf(recipient), amount);
