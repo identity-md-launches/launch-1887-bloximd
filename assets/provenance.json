@@ -1,0 +1,10 @@
+{
+  "account": "https://x.com/blox_imd",
+  "selection": "Profile avatar, original resolution, unchanged",
+  "lookup": "https://api.fxtwitter.com/blox_imd",
+  "source": "https://pbs.twimg.com/profile_images/2108499797414236160/QJxnGSNM.jpg",
+  "retrieved_on": "2026-10-16",
+  "file": "blox-logo.jpg",
+  "sha256": "c2aeb53e69e10a7a4654a97ce8b26bd0a99a843d024ad6f09f6f7d235ca2eaec",
+  "usage": "Token logo selected from the account specified by the requester; artwork is not covered by the code license."
+}
